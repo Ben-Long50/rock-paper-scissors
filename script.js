@@ -29,31 +29,31 @@ function game(){
             }
             else if(playerSelection === 'rock' && computerSelection === 'paper'){
                 computerRoundsWon++;
-                return 'You Lose! Paper beats Rock'
+                return alert('You Lose! Paper beats Rock')
             }
             else if(playerSelection === 'paper' && computerSelection === 'scissors'){
                 computerRoundsWon++;
-                return 'You Lose! Scissors beats Paper'
+                return alert('You Lose! Scissors beats Paper')
             }
             else if(playerSelection === 'scissors' && computerSelection === 'rock'){
                 computerRoundsWon++;
-                return 'You Lose! Rock beats Scissors'
+                return alert('You Lose! Rock beats Scissors')
             }
             else if(playerSelection === 'rock' && computerSelection === 'rock'){
                 i--;
-                return 'It\'s a tie! Try again'
+                return alert('It\'s a tie! Try again')
             }
             else if(playerSelection === 'paper' && computerSelection === 'paper'){
                 i--;
-                return 'It\'s a tie! Try again'
+                return alert('It\'s a tie! Try again')
             }
             else if(playerSelection === 'scissors' && computerSelection === 'scissors'){
                 i--;
-                return 'It\'s a tie! Try again'
+                return alert('It\'s a tie! Try again')
             }
             else{
                 playerRoundsWon++;
-                return 'You win!'
+                return alert('You win!')
                 
             }
         }
