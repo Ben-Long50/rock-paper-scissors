@@ -1,0 +1,24 @@
+html{
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+#weapon-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 100px;
+}
+
+.weapon-tile{
+    background-color: black;
+    border-radius: 40px;
+}
+
