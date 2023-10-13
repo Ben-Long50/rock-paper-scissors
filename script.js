@@ -1,15 +1,49 @@
 
-game();
+const gameChoice = ['sword', 'shield', 'bow'];
+const computerRoundsWon = 0;
+const playerRoundsWon = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+    const swordButton = document.querySelector('.sword');
+    const shieldButton = document.querySelector('.shield');
+    const bowButton = document.querySelector('.bow');
+
+    function buttonColorChange(button, color1, color2){
+        button.style.backgroundColor = color1;
+        button.style.borderColor = color2;
+    }
+
+    swordButton.addEventListener('mouseover', function() {
+        buttonColorChange(swordButton, 'white', 'red');
+    });
+
+    swordButton.addEventListener('mouseout', function() {
+        buttonColorChange(swordButton, 'rgb(175, 175, 175)', 'rgb(0, 134, 40)');
+    });
+
+    shieldButton.addEventListener('mouseover', function() {
+        buttonColorChange(shieldButton, 'white', 'red');
+    });
+
+    shieldButton.addEventListener('mouseout', function() {
+        buttonColorChange(shieldButton, 'rgb(175, 175, 175)', 'rgb(0, 134, 40)');
+    });
+
+    bowButton.addEventListener('mouseover', function() {
+        buttonColorChange(bowButton, 'white', 'red');
+    });
+
+    bowButton.addEventListener('mouseout', function() {
+        buttonColorChange(bowButton, 'rgb(175, 175, 175)', 'rgb(0, 134, 40)');
+    });
+});
 // function game(){
-//     let gameChoice = ['rock', 'paper', 'scissors'];
-//     let computerRoundsWon = 0;
-//     let playerRoundsWon = 0;
 
 //     for(let i = 1; i <= 5; i++){
 
 //         alert(`The score is currnetly Player: ${playerRoundsWon} Computer: ${computerRoundsWon} Round ${i} go!`)
 
-//         let playerChoice = prompt('Choose Rock, Paper or Scissors').toLowerCase();
+//         const playerChoice = prompt('Choose , Paper or Scissors').toLowerCase();
 //         console.log(playerChoice);
 
 //         let computerChoice = getComputerChoice(gameChoice);
