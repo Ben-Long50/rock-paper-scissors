@@ -1,24 +1,58 @@
-html{
+html,
+body{
     margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
 
 body{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 50px;
+}
+
+h1{
+    height: 10%;
+    margin-top: 100px;
+    font-size: 80px;
 }
 
 #weapon-list{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    flex-grow: 1;
     gap: 100px;
+    align-items: flex-start
 }
 
-.weapon-tile{
-    background-color: black;
+.sword,
+.shield,
+.bow{
     border-radius: 40px;
+    border-color: rgb(0, 134, 40);
+    background-color: rgb(175, 175, 175);
+    border-width: 8px;
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    flex: 1 1 0;
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 300px;
+    align-self: flex-start;
 }
 
+.sword{
+    background-image: url("sword.png");
+}
+
+.shield{
+    background-image: url("shield.png");
+}
+
+.bow{
+    background-image: url("bow.png");
+}
