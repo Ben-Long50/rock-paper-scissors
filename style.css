@@ -22,6 +22,7 @@ body{
 
 h1{
     font-size: 80px;
+    text-align: center;
 }
 
 h2{
@@ -41,29 +42,31 @@ h2{
 
 .sword,
 .shield,
-.bow{
+.bow {
     border-radius: 40px;
-    border-color: rgb(0, 134, 40);
-    background-color: rgb(175, 175, 175);
+    border: none;
     border-width: 8px;
     background-position: center;
-    background-size: 80%;
     background-repeat: no-repeat;
     flex-basis: 400px;
     min-height: 400px;
     align-self: center;
+    position: relative;
 }
 
-.sword{
-    background-image: url("sword.png");
+.sword {
+    background: url("sword.png"), linear-gradient(rgb(189, 189, 189), rgb(43, 43, 43));
+    background-size: contain;
 }
 
-.shield{
-    background-image: url("shield.png");
+.shield {
+    background: url("shield.png"), linear-gradient(rgb(189, 189, 189), rgb(43, 43, 43));
+    background-size: contain;
 }
 
-.bow{
-    background-image: url("bow.png");
+.bow {
+    background: url("bow.png"), linear-gradient(rgb(189, 189, 189), rgb(43, 43, 43));
+    background-size: contain;
 }
 
 .score-card{

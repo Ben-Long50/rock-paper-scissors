@@ -4,19 +4,12 @@ const playerRoundsWon = 0;
 let currentChampionScore = 0;
 let currentAdversaryScore = 0;
     
-const swordButton = document.querySelector('.sword');
-const shieldButton = document.querySelector('.shield');
-const bowButton = document.querySelector('.bow');
+const weaponList = document.querySelector('#weapon-list');
 const championScore = document.querySelector('.champion-score');
 const adversaryScore = document.querySelector('.adversary-score');
 
 championScore.textContent = currentChampionScore;
 adversaryScore.textContent = currentAdversaryScore;
-
-function buttonColorChange(button, color1, color2){
-    button.style.backgroundColor = color1;
-    button.style.borderColor = color2;
-}
 
 function updateScores(){
     championScore.textContent = currentChampionScore;
@@ -38,49 +31,27 @@ function gameEndCondition(){
     }
 }
 
-swordButton.addEventListener('mouseover', function() {
-    buttonColorChange(swordButton, 'white', 'red');
-});
-
-swordButton.addEventListener('mouseout', function() {
-    buttonColorChange(swordButton, 'rgb(175, 175, 175)', 'rgb(0, 134, 40)');
-});
-
-shieldButton.addEventListener('mouseover', function() {
-    buttonColorChange(shieldButton, 'white', 'red');
-});
-
-shieldButton.addEventListener('mouseout', function() {
-    buttonColorChange(shieldButton, 'rgb(175, 175, 175)', 'rgb(0, 134, 40)');
-});
-
-bowButton.addEventListener('mouseover', function() {
-    buttonColorChange(bowButton, 'white', 'red');
-});
-
-bowButton.addEventListener('mouseout', function() {
-    buttonColorChange(bowButton, 'rgb(175, 175, 175)', 'rgb(0, 134, 40)');
-});
-
-swordButton.addEventListener('click', function(){
-    const computerChoice = getComputerChoice(gameChoice);
-    playerChoice = 'sword';
-    playGameRound(playerChoice, computerChoice);
-    gameEndCondition();
+weaponList.addEventListener('mouseover', function(e){
+    if(e.target.matches('button')){
+        e.target.style.background = `url("${e.target.getAttribute('class')}.png"), linear-gradient(rgb(43, 43, 43), rgb(189, 189, 189))`;
+        e.target.style.backgroundSize = 'contain';
+    }
 })
 
-shieldButton.addEventListener('click', function(){
-    const computerChoice = getComputerChoice(gameChoice);
-    playerChoice = 'shield';
-    playGameRound(playerChoice, computerChoice)
-    gameEndCondition();
+weaponList.addEventListener('mouseout', function(e){
+    if(e.target.matches('button')){
+        e.target.style.background = `url("${e.target.getAttribute('class')}.png"), linear-gradient(rgb(189, 189, 189), rgb(43, 43, 43))`;
+        e.target.style.backgroundSize = 'contain';
+    }
 })
 
-bowButton.addEventListener('click', function(){
-    const computerChoice = getComputerChoice(gameChoice);
-    playerChoice = 'bow';
-    playGameRound(playerChoice, computerChoice);
-    gameEndCondition();
+weaponList.addEventListener('click', function(e){
+    if(e.target.matches('button')){
+        const computerChoice = getComputerChoice(gameChoice);
+        playerChoice = e.target.getAttribute('class');
+        playGameRound(playerChoice, computerChoice);
+        gameEndCondition();
+    }
 })
 
 function getComputerChoice(gameOptions){
