@@ -1,9 +1,7 @@
-/* html{
-    background-image: url(background-battle.png);
-    background-position: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-} */
+@font-face {
+    font-family: 'Pixelify_Sans';
+    src: url(Pixelify_Sans/PixelifySans-VariableFont_wght.ttf);
+}
 
 html,
 body{
@@ -11,6 +9,12 @@ body{
     padding: 0;
     height: 100%;
     width: 100%;
+    font-family: 'Pixelify_Sans';
+}
+
+html{
+    background: url('medieval-landscape.jpg') center no-repeat;
+    background-size: cover;
 }
 
 body{
@@ -18,11 +22,13 @@ body{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 h1{
-    font-size: 80px;
+    font-size: 100px;
     text-align: center;
+    letter-spacing: 20px;
 }
 
 h2{
@@ -33,7 +39,6 @@ h2{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 100px;
     flex-grow: 1;
     gap: 100px;
     align-items: flex-start;
@@ -44,8 +49,7 @@ h2{
 .shield,
 .bow {
     border-radius: 40px;
-    border: none;
-    border-width: 8px;
+    border: solid black 7px;
     background-position: center;
     background-repeat: no-repeat;
     flex-basis: 400px;
@@ -55,20 +59,19 @@ h2{
 }
 
 .sword {
-    background: url("sword.png") no-repeat, linear-gradient(rgb(189, 189, 189), rgb(43, 43, 43));
+    background: url("sword2.png") no-repeat rgba(255, 255, 255, 0.5);
     background-size: 80%;
     background-position: center;
-
 }
 
 .shield {
-    background: url("shield.png") no-repeat, linear-gradient(rgb(189, 189, 189), rgb(43, 43, 43));
+    background: url("shield2.png") no-repeat rgba(255, 255, 255, 0.5);
     background-size: 80%;
     background-position: center;
 }
 
 .bow {
-    background: url("bow.png") no-repeat, linear-gradient(rgb(189, 189, 189), rgb(43, 43, 43));
+    background: url("bow2.png") no-repeat rgba(255, 255, 255, 0.5);
     background-size: 80%;
     background-position: center;
 }
@@ -85,7 +88,12 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    height: 100px;
+    padding: 0 30px;
+    gap: 50px;
+    border: solid black 5px;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .adversary-score,
@@ -93,9 +101,8 @@ h2{
     font-size: 60px;
     text-align: center;
     width: 50px;
-    border-style: solid;
-    border-width: 4px;
-    border-radius: 10px;
-    border-color: rgb(0, 134, 40);
-    background-color: rgb(175, 175, 175);
+}
+
+.hovered-weapon{
+    background-color: rgb(255, 255, 255);
 }

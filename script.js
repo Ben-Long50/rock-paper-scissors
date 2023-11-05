@@ -33,17 +33,19 @@ function gameEndCondition(){
 
 weaponList.addEventListener('mouseover', function(e){
     if(e.target.matches('button')){
-        e.target.style.background = `url("${e.target.getAttribute('class')}.png") no-repeat, linear-gradient(rgb(43, 43, 43), rgb(189, 189, 189))`;
-        e.target.style.backgroundSize = '80%';
-        e.target.style.backgroundPosition = 'center';
+        e.target.classList.add('hovered-weapon');
     }
 })
 
 weaponList.addEventListener('mouseout', function(e){
     if(e.target.matches('button')){
-        e.target.style.background = `url("${e.target.getAttribute('class')}.png") no-repeat, linear-gradient(rgb(189, 189, 189), rgb(43, 43, 43))`;
-        e.target.style.backgroundSize = '80%';
-        e.target.style.backgroundPosition = 'center';
+        e.target.classList.remove('hovered-weapon');
+    }
+})
+
+weaponList.addEventListener('click', function(e){
+    if(e.target.matches('button')){
+        e.target.classList.remove('hovered-weapon');
     }
 })
 
