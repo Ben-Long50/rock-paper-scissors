@@ -7,6 +7,7 @@ let currentAdversaryScore = 0;
 const weaponList = document.querySelector('#weapon-list');
 const championScore = document.querySelector('.champion-score');
 const adversaryScore = document.querySelector('.adversary-score');
+const outcomeMessage = document.querySelector('#outcome-message')
 
 championScore.textContent = currentChampionScore;
 adversaryScore.textContent = currentAdversaryScore;
@@ -18,13 +19,13 @@ function updateScores(){
 
 function gameEndCondition(){
     if(currentAdversaryScore === 5){
-        alert('You\'ve been bested in combat. Try again! Victory is but a few clicks away!');
+        outcomeMessage.textContent = 'You\'ve been bested in combat. Try again! Victory is but a few clicks away!';
         currentAdversaryScore = 0;
         currentChampionScore = 0;
         updateScores();
     }
     else if(currentChampionScore === 5){
-        alert('You are victorious in battle! On to the next adversary.');
+        outcomeMessage.textContent = 'You are victorious in battle! On to the next adversary.';
         currentAdversaryScore = 0;
         currentChampionScore = 0;
         updateScores();
@@ -66,30 +67,37 @@ function playGameRound(playerSelection, computerSelection){
     if(playerSelection === 'sword' && computerSelection === 'shield'){
         currentAdversaryScore++;
         updateScores();
-        return alert('You Lose! Your attack was deflected')
+        outcomeMessage.textContent =  'You Lose! Your adversary selected sheild. Your attack was deflected';
+        return;
     }
     else if(playerSelection === 'shield' && computerSelection === 'bow'){
         currentAdversaryScore++;
         updateScores();
-        return alert('You Lose! You\'ve been shot in the leg')
+        outcomeMessage.textContent =  'You Lose! Your adversary selected bow. You\'ve been shot in the leg';
+        return;
     }
     else if(playerSelection === 'bow' && computerSelection === 'sword'){
         currentAdversaryScore++;
         updateScores();
-        return alert('You Lose! You\'ve been stabbed in the back')
+        outcomeMessage.textContent =  'You Lose! Your adversary selected sword. You\'ve been stabbed in the back';
+        return;
     }
     else if(playerSelection === 'sword' && computerSelection === 'sword'){
-        return alert('It\'s a tie! Try again')
+        outcomeMessage.textContent =  'It\'s a tie! Try again';
+        return;
     }
     else if(playerSelection === 'shield' && computerSelection === 'shield'){
-        return alert('It\'s a tie! Try again')
+        outcomeMessage.textContent =  'It\'s a tie! Try again';
+        return;
     }
     else if(playerSelection === 'bow' && computerSelection === 'bow'){
-        return alert('It\'s a tie! Try again')
+        outcomeMessage.textContent =  'It\'s a tie! Try again';
+        return;
     }
     else{
         currentChampionScore++;
         updateScores();
-        return alert('You win!')
+        outcomeMessage.textContent = 'You win!';
+        return;
     }
 }
