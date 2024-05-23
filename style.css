@@ -63,19 +63,18 @@ h3 {
 @media (max-width: 800px) {
     .score-card {
         flex-direction: column;
-        justify-content: center;
     }
 }
 
 .sword,
 .shield,
 .bow {
-    border-radius: 40px;
+    border-radius: 15%;
     border: solid black 7px;
     background-position: center;
     background-repeat: no-repeat;
     aspect-ratio: 1 / 1;
-    flex-basis: 25vw;
+    flex-basis: 20vw;
     min-width: 200px;
     align-self: center;
 }
@@ -105,13 +104,18 @@ h3 {
     padding-right: 15%;
 }
 
+/* .score {
+    margin-left: auto;
+    margin-right: auto;
+} */
+
 .score-card{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 .score-counter{
