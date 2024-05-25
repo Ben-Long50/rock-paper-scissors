@@ -60,7 +60,13 @@ h3 {
     align-items: flex-start;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 780px) {
+    body {
+        padding: 25px;
+    }
+    #weapon-list {
+        flex-direction: column;
+    }
     .score-card {
         flex-direction: column;
     }
@@ -97,11 +103,17 @@ h3 {
     background-position: center;
 }
 
-#outcome-message {
+.message-container {
     flex-grow: 1;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-left: 15%;
     padding-right: 15%;
+}
+
+#outcome-message {
+    text-align: center;
 }
 
 /* .score {
